@@ -13260,7 +13260,13 @@ Make sure to keep track of the various features and conditions you tried before 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer</strong>: Predictions have an accuracy of 80.92%.</p>
+<p><strong>Answer</strong>: Predictions have an accuracy of 80.92%.
+I knew that more females survived than males. Therefore I tried to exclude as many dead females and living males as possible. I worked with a if else structure. With each additional case the prediction became better. I was basically filtering the hole set.</p>
+<p>Fist I checked for any survived males. I found that boys (age&lt;10) and first class passengers between 20 and 40 survived.</p>
+<p>Then I checked for dead females. Females from the 3 class between 40 and 50 died and also those with a big family.
+By excluding them, the rate of the remaining females went up.</p>
+<p>The last step was to accept all remaining females and reject the remaining males.</p>
+<p>The Pclass was very informative, then the age. The other features were not that informativ.</p>
 
 </div>
 </div>

@@ -14635,8 +14635,11 @@ It is an easy to use automated optimizing technique.</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong><br>
-Let's say we use the grid search to find the best parameter. But we really find the best parameter for the given training/test set. Maybe our model is overfitted, but this particular test is not showing that.</p>
-<p>With k-fold-cross-validation we can have n different train/test set versions from the same data set. Test all this different variations reduce the chance of having a unfortunate training test combination.</p>
+Let's say we use the grid search to find the best parameter. But we really find the best parameter for the given training/test set. Maybe our model is overfitted, but this particular test is not showing this.</p>
+<p>With k-fold-cross-validation we are dividing the data in k sub-sets. In each iteration a different sub-set is acting as the test set and the remaining sets are putting together as the training set. 
+Now we can perform for each of this k versions a grid search finding the best parameter set for a given estimator.</p>
+<p>Using a validation score, we estimate the average performance for each estimator.</p>
+<p>All this different variations reduce the chance of having a unfortunate training test combination and prevents overfitting. This is especially true for a given small data set.</p>
 
 </div>
 </div>
