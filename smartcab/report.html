@@ -16593,8 +16593,11 @@ ID 3: We get rewarded for staying and not turning right. (should been punished)<
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
-<p>Smartcab itself: The route planner already gives us the best direction, we don't need an additional  feature for understanding the waypoint.<br>
-Environment: We don't know how the other agents behave. So it would be hard to calculate the future reward, we could made an accident or not.</p>
+<p>Smartcab itself:<br>
+The Waypoint is changing on each state. The Smartcab has no knowledge about the grid or where it wants to go.<br>
+Only the route planner knows where to go. Therefore it would be hard to estimate the future reward, because we simply don't know where to go.</p>
+<p>Environment:<br>
+The environment changes in each run. The destination is changing. The other agents behave differently in each turn.</p>
 
 </div>
 </div>
