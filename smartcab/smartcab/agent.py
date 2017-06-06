@@ -8,7 +8,7 @@ class LearningAgent(Agent):
     """ An agent that learns to drive in the Smartcab world.
         This is the object you will be modifying. """ 
 
-    def __init__(self, env, learning=True, epsilon=1.0, alpha=0.618):
+    def __init__(self, env, learning=False, epsilon=1.0, alpha=0.618):
         super(LearningAgent, self).__init__(env)     # Set the agent in the evironment 
         self.planner = RoutePlanner(self.env, self)  # Create a route planner
         self.valid_actions = self.env.valid_actions  # The set of valid actions
@@ -95,9 +95,12 @@ class LearningAgent(Agent):
         ###########
         # Calculate the maximum Q-value of all actions for a given state
 
-        maxQ = max(self.Q[self.state], key=lambda key: self.Q[self.state][key])
+        #should not return the optimal action, but the optimal value
+        #maxQ = max(self.Q[self.state], key=lambda key: self.Q[self.state][key])
+        maxV = max(self.Q[self.state].values())
+        maxList = [key for key, value in self.Q[self.state].iteritems() if value == maxV]
 
-        return maxQ 
+        return random.choice(maxList) 
 
 
     def createQ(self, state):
